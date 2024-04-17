@@ -1,0 +1,52 @@
+1. Open terminal and create a project
+composer create-project laravel/laravel sample
+vendorname/package projectname
+2.Open the created project sample in the VSCode
+3. then open the terminal and type this
+php artisan serve
+Follow link to view the Laravel homepage
+Resources->Routes->web.php
+4.CREATING A CONTROLLER
+php artisan make:controller HomeController
+app->http->controller->homecontroller
+5. In homecontroller type the homepage()
+
+6. In the sample folder, routes->web.php specify the route
+[install php namespace resolver]
+Web.php
+Route::get('/', [HomeController::Class,'homepage']);
+Change the default function to this
+Then right click and import class
+use App\Http\Controllers\HomeController;
+7. In resources->views->
+Create new page homepage.blade.php
+Write some code
+8. in Homecontroller
+return view('homepage');
+then the page homepage.blade.php will be displayed
+9. In resources->views->
+Create new folder components – to include the common files like header,footer etc
+10. in components folder cxreate new file layout.blade.php
+And copy the header and footer from homepage.balde.php
+</x-layout>
+11. open the boostrap copy the code for navbar and form and paste it in the homepage.blade.php
+12. paste the form code inside div class container to get it aligned
+13. copy paste the fields to create username and re-type password
+14. the code for navbar should be in the layout.blade.php
+15. in the homapge.blade.php <form action=”register” method=”POST”>
+16. in the web.php
+17. create new controller UserController and write the function register inside that
+
+18. open mysql workbench
+Creatye new schema
+19. .env file check password and username and database name
+20. database->migrations->in that first file
+Php artisan migrate:fresh
+21. in homepage.blade.php make changes in code
+@csrf
+@error('name')
+{{$MESSAGE}}
+@enderror
+php artisan make: model Product –migration //model is the table product
+[app->models->product]
+$table->string(‘product_name’)
